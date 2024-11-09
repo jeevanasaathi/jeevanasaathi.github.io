@@ -40,6 +40,8 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
+	<link rel="stylesheet" href="css/gallerystyles.css">
+
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
@@ -100,13 +102,13 @@
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list"></ul>
-				</div>
+				<div id="masonry-gallery" class="grid">
+					<!-- Images will be dynamically added by JavaScript -->
+				</div>							
 			</div>
 		</div>
 	</div>
- 
+
 
 <footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
@@ -130,6 +132,11 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
+	<!-- Masonry.js -->
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<!-- imagesLoaded.js (ensures images are loaded before Masonry is applied) -->
+	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
