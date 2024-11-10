@@ -34,40 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Provide a list of filenames (without path)
     const imageFilenames = [
-        '1f8fa204-a842-4272-9262-0b8be851a678.JPG',
-        '3FA0D218-6578-4AC4-ACBE-79EC23F334B3.JPG',
         '6C5A4828-3591-4B83-AB9E-1FE1803D2940.JPG',
-        'gallery.jpeg',
-        'IMG_1802.jpeg',
-        'IMG_1962.jpeg',
-        'IMG_2057.jpeg',
-        'IMG_2178.jpeg',
-        'IMG_2346.jpeg',
-        'IMG_2473.jpeg',
-        'IMG_3146.jpeg',
-        'IMG_3470.jpeg',
-        'IMG_3697.jpeg',
-        'IMG_4235.jpeg',
-        'IMG_4333.jpeg',
-        'IMG_4444.jpeg',
-        'IMG_4644.jpeg',
-        'IMG_5042.jpeg',
-        'IMG_5083.jpeg',
-        'IMG_5878.jpeg',
-        'IMG_5939.jpeg',
-        'IMG_6209.jpeg',
-        'IMG_6397.jpeg',
-        'IMG_7033.jpeg',
-        'IMG_7171.jpeg',
-        'IMG_7183.jpeg',
-        'IMG_7303.JPG',
-        'IMG_7317.JPG',
-        'IMG_7945.jpeg',
-        'IMG_8878.jpeg'
     ];    
 
     // Add the folder path automatically to each filename
-    const images = imageFilenames.map(filename => `gallery/gallery/${filename}`);
+    const images = imageFilenames.map(filename => `gallery/proposal/${filename}`);
 
     // Lightbox navigation functions
     function showImage(index) {
