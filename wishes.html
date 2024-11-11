@@ -51,61 +51,81 @@
 	<![endif]-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css">
     <style>
-        .video-gallery-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+		.video-gallery-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
 
-        .video-item {
-            flex: 0 0 calc(33.333% - 20px);
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-        }
+		.video-item {
+			position: relative;
+			border-radius: 8px;
+			overflow: hidden;
+			cursor: pointer;
+		}
 
-        .video-thumbnail {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            display: block;
-        }
+		/* Desktop layout (default) */
+		@media screen and (min-width: 768px) {
+			.video-item {
+				flex: 0 0 calc(33.333% - 20px);
+			}
+		}
 
-        .play-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
+		/* Tablet layout */
+		@media screen and (max-width: 767px) and (min-width: 481px) {
+			.video-item {
+				flex: 0 0 calc(50% - 20px);
+			}
+		}
 
-        .play-overlay::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 10px 0 10px 20px;
-            border-color: transparent transparent transparent #000;
-            margin-left: 5px;
-        }
+		/* Mobile layout */
+		@media screen and (max-width: 480px) {
+			.video-item {
+				flex: 0 0 100%;
+			}
+		}
 
-        .video-item:hover .play-overlay {
-            background-color: rgba(255, 255, 255, 1);
-        }
+		.video-thumbnail {
+			width: 100%;
+			aspect-ratio: 16/9;
+			object-fit: cover;
+			display: block;
+		}
 
-        .video-summary {
-    		position: absolute;
+		.play-overlay {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 60px;
+			height: 60px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background-color 0.3s;
+		}
+
+		.play-overlay::after {
+			content: '';
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10px 0 10px 20px;
+			border-color: transparent transparent transparent #000;
+			margin-left: 5px;
+		}
+
+		.video-item:hover .play-overlay {
+			background-color: rgba(255, 255, 255, 1);
+		}
+
+		.video-summary {
+			position: absolute;
 			bottom: 20px;
 			left: 20px;
 		}
