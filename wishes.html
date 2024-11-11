@@ -49,7 +49,82 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css">
+    <style>
+        .video-gallery-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
+        .video-item {
+            flex: 0 0 calc(33.333% - 20px);
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .play-overlay::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 20px;
+            border-color: transparent transparent transparent #000;
+            margin-left: 5px;
+        }
+
+        .video-item:hover .play-overlay {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .video-summary {
+    		position: absolute;
+			bottom: 20px;
+			left: 20px;
+		}
+
+		.video-summary span {
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+			font-size: 20px;
+			font-weight: 500;
+			color: white;
+			text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+			letter-spacing: 0.5px;
+			transition: transform 0.3s ease;
+			display: inline-block;
+		}
+
+		.video-item:hover .video-summary span {
+			transform: scale(1.05);
+		}
+    </style>
 	</head>
 	<body>
 		
@@ -95,93 +170,69 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Our Memories</span>
-					<h2>Wedding Gallery</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<span>With Love & Blessings</span>
+					<h2>Wishes</h2>
+					<p>Cherished words from our dearest family members and friends as we begin our forever.</p>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
-						<a href="gallery_r1c1.html">
-							<div class="case-studies-summary">
-								<span>14 Photos</span>
-								<h2>Two Glas of Juice</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-						<a href="gallery_r1c3.html">
-							<div class="case-studies-summary">
-								<span>30 Photos</span>
-								<h2>Timer starts now!</h2>
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-						<a href="gallery_r1c3.html">
-							<div class="case-studies-summary">
-								<span>90 Photos</span>
-								<h2>Beautiful sunset</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-						<a href="gallery_r2c1.html">
-							<div class="case-studies-summary">
-								<span>12 Photos</span>
-								<h2>Company's Conference Room</h2>
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-							<a href="gallery_r2c2.html">
-								<div class="case-studies-summary">
-									<span>50 Photos</span>
-									<h2>Useful baskets</h2>
+					<ul class="video-gallery-list" id="videoGallery">
+						<li class="video-item animate-box" data-animate-effect="fadeIn">
+							<a href="gallery/wishes/Appa.mp4" class="glightbox" data-gallery="gallery1">
+								<img src="gallery/wishes/thumbnails/Appa.png" alt="Video thumbnail" class="video-thumbnail">
+								<div class="play-overlay"></div>
+								<div class="video-summary">
+									<span>Appa</span>
 								</div>
 							</a>
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-							<a href="gallery_r2c3.html">
-								<div class="case-studies-summary">
-									<span>45 Photos</span>
-									<h2>Skater man in the road</h2>
+						<li class="video-item animate-box" data-animate-effect="fadeIn">
+							<a href="gallery/wishes/Aaie.mp4" class="glightbox" data-gallery="gallery1">
+								<img src="gallery/wishes/thumbnails/Aaie.png" alt="Video thumbnail" class="video-thumbnail">
+								<div class="play-overlay"></div>
+								<div class="video-summary">
+									<span>Aaie</span>
 								</div>
 							</a>
 						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-							<a href="gallery_r3c1.html">
-								<div class="case-studies-summary">
-									<span>35 Photos</span>
-									<h2>Two Glas of Juice</h2>
+						<li class="video-item animate-box" data-animate-effect="fadeIn">
+							<a href="gallery/wishes/Mumma.mp4" class="glightbox" data-gallery="gallery1">
+								<img src="gallery/wishes/thumbnails/Mumma.png" alt="Video thumbnail" class="video-thumbnail">
+								<div class="play-overlay"></div>
+								<div class="video-summary">
+									<span>Mumma</span>
 								</div>
 							</a>
 						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-							<a href="gallery_r3c2.html">
-								<div class="case-studies-summary">
-									<span>90 Photos</span>
-									<h2>Timer starts now!</h2>
+						<li class="video-item animate-box" data-animate-effect="fadeIn">
+							<a href="gallery/wishes/Papa.mp4" class="glightbox" data-gallery="gallery1">
+								<img src="gallery/wishes/thumbnails/Papa.png" alt="Video thumbnail" class="video-thumbnail">
+								<div class="play-overlay"></div>
+								<div class="video-summary">
+									<span>Papa</span>
 								</div>
 							</a>
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-							<a href="gallery_r3c2.html">
-								<div class="case-studies-summary">
-									<span>56 Photos</span>
-									<h2>Beautiful sunset</h2>
+						<li class="video-item animate-box" data-animate-effect="fadeIn">
+							<a href="gallery/wishes/Ajja.mp4" class="glightbox" data-gallery="gallery1">
+								<img src="gallery/wishes/thumbnails/Ajja.png" alt="Video thumbnail" class="video-thumbnail">
+								<div class="play-overlay"></div>
+								<div class="video-summary">
+									<span>Ajja</span>
 								</div>
 							</a>
 						</li>
-					</ul>		
+						<li class="video-item animate-box" data-animate-effect="fadeIn">
+							<a href="gallery/wishes/Amma.mp4" class="glightbox" data-gallery="gallery1">
+								<img src="gallery/wishes/thumbnails/Amma.png" alt="Video thumbnail" class="video-thumbnail">
+								<div class="play-overlay"></div>
+								<div class="video-summary">
+									<span>Amma</span>
+								</div>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -232,6 +283,62 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+	<script>
+		// Initialize GLightbox
+		const lightbox = GLightbox({
+			touchNavigation: true,
+			loop: true,
+			autoplayVideos: true
+		});
+	
+		// Function to generate video thumbnail from video file
+		function generateThumbnail(videoFile) {
+			return new Promise((resolve) => {
+				const video = document.createElement('video');
+				video.src = videoFile;
+				video.load();
+				video.addEventListener('loadeddata', () => {
+					video.currentTime = 1; // Capture frame at 1 second
+				});
+				video.addEventListener('seeked', () => {
+					const canvas = document.createElement('canvas');
+					canvas.width = video.videoWidth;
+					canvas.height = video.videoHeight;
+					const ctx = canvas.getContext('2d');
+					ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+					resolve(canvas.toDataURL('image/jpeg'));
+				});
+			});
+		}
+	
+		// Function to add a new video to the gallery
+		async function addVideoToGallery(videoUrl, title) {
+			const thumbnail = await generateThumbnail(videoUrl);
+			const galleryList = document.getElementById('videoGallery');
+			
+			const li = document.createElement('li');
+			li.className = 'video-item animate-box';
+			li.setAttribute('data-animate-effect', 'fadeIn');
+			
+			li.innerHTML = `
+				<a href="${videoUrl}" class="glightbox" data-gallery="gallery1">
+					<img src="${thumbnail}" alt="${title}" class="video-thumbnail">
+					<div class="play-overlay"></div>
+					<div class="video-summary">
+						<span>${title}</span>
+					</div>
+				</a>
+			`;
+			
+			galleryList.appendChild(li);
+			// Refresh GLightbox instance
+			lightbox.reload();
+		}
+	
+		// Example usage:
+		// addVideoToGallery('path/to/video.mp4', 'My Video Title');
+	</script>
 
 	</body>
 </html>

@@ -239,13 +239,14 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-video {
-  height: 450px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fits within the box without stretching */
+  border-radius: 7px; /* Keeps the rounded corners */
   overflow: hidden;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  border-radius: 7px;
+  position: relative;
 }
+
 .fh5co-video a {
   z-index: 1001;
   position: absolute;
