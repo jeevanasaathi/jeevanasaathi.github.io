@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Provide a list of filenames (without path)
     const imageFilenames = [
-        '6C5A4828-3591-4B83-AB9E-1FE1803D2940.JPG',
+        'yoda2.jpg',
     ];    
 
     // Add the folder path automatically to each filename
